@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.not;
 
 public class RestAssuredExercises1Test {
 
@@ -107,10 +108,11 @@ public class RestAssuredExercises1Test {
 	public void checkThereWasNoRaceAtNurburgringIn2014() {
 		
 		given().
-			spec(requestSpec).
+				spec(requestSpec).
 		when().
-			get("/2014/circuits.json").
-		then().assertThat().
-		body("MRData.CircuitTable.Circuits.circuitId", hasItem("nurburgring")).log().all();
+				get("/2014/circuits.json").
+		then().
+				assertThat().
+				body("MRData.CircuitTable.Circuits.circuitId", not(hasItem("nurburgring")));
 	}
 }

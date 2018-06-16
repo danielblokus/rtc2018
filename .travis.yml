@@ -1,5 +1,8 @@
 language: java
 
+before_script:
+- java -jar wiremock-standalone-2.17.0.jar --port 9876 || true
+
 tests:
   provider: script
   script: "mvn - X clean test"

@@ -6,9 +6,7 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.expect;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.not;
 
@@ -38,7 +36,7 @@ public class RestAssuredExercises1Test {
 		when().
 			get("/2016/drivers.json").
 		then().
-				statusCode(200);
+			statusCode(200);
 	}
 	
 	/*******************************************************
@@ -66,10 +64,10 @@ public class RestAssuredExercises1Test {
 		given().
 			spec(requestSpec).
 		when().
-				get("/2016/drivers.json").
+			get("/2016/drivers.json").
 		then().
-				assertThat().
-				contentType(ContentType.JSON);
+			assertThat().
+			contentType(ContentType.JSON);
 	}
 	
 	/***********************************************
@@ -85,10 +83,10 @@ public class RestAssuredExercises1Test {
 		given().
 			spec(requestSpec).
 		when().
-				get("/2014/1/circuits.json").
+			get("/2014/1/circuits.json").
 		then().
-				assertThat().
-				body("MRData.CircuitTable.Circuits.circuitId", hasItem("albert_park"));
+			assertThat().
+			body("MRData.CircuitTable.Circuits.circuitId", hasItem("albert_park"));
 	}
 	
 	/***********************************************
@@ -119,9 +117,9 @@ public class RestAssuredExercises1Test {
 		given().
 				spec(requestSpec).
 		when().
-				get("/2014/circuits.json").
+			get("/2014/circuits.json").
 		then().
-				assertThat().
-				body("MRData.CircuitTable.Circuits.circuitId", not(hasItem("nurburgring")));
+			assertThat().
+			body("MRData.CircuitTable.Circuits.circuitId", not(hasItem("nurburgring")));
 	}
 }

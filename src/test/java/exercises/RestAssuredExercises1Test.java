@@ -67,7 +67,9 @@ public class RestAssuredExercises1Test {
 			spec(requestSpec).
 		when().
 				get("/2016/drivers.json").
-		then().assertThat().contentType(ContentType.JSON);
+		then().
+				assertThat().
+				contentType(ContentType.JSON);
 	}
 	
 	/***********************************************
@@ -84,7 +86,9 @@ public class RestAssuredExercises1Test {
 			spec(requestSpec).
 		when().
 				get("/2014/1/circuits.json").
-		then().assertThat().body("MRData.CircuitTable.Circuits.circuitId", hasItem("albert_park")).log().all();
+		then().
+				assertThat().
+				body("MRData.CircuitTable.Circuits.circuitId", hasItem("albert_park"));
 	}
 	
 	/***********************************************

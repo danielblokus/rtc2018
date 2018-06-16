@@ -1,7 +1,7 @@
 language: java
 
-
 tests:
   provider: script
   script:
-  - mvn -X clean test
+  - java -jar src/test/resources/wiremock-standalone-2.17.0.jar --port 8081
+  - mvn -X test

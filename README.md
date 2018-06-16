@@ -1,4 +1,4 @@
-REST Assured workshop
+REST Assured workshop [![Build Status](https://travis-ci.org/danielblokus/rtc2018.svg?branch=master)](https://travis-ci.org/danielblokus/rtc2018)
 ==================
 Here are all the materials for my workshop on API testing, which I'll be facilitating at the Romanian Testing Conference 2018. Feel free to use, share and adapt these materials as you see fit.
 

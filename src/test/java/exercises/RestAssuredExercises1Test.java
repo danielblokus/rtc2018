@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.hasItem;
 
 public class RestAssuredExercises1Test {
 
@@ -14,10 +14,9 @@ public class RestAssuredExercises1Test {
 	
 	@BeforeClass
 	public static void createRequestSpecification() {
-		
 		requestSpec = new RequestSpecBuilder().
 			setBaseUri("http://localhost").
-			setPort(8081).
+			setPort(9876).
 			setBasePath("/api/f1").
 			build();
 	}
@@ -110,7 +109,8 @@ public class RestAssuredExercises1Test {
 		given().
 			spec(requestSpec).
 		when().
-
-		then();
+			get("/2014/circuits.json").
+		then().assertThat().
+		body("MRData.CircuitTable.Circuits.circuitId", hasItem("nurburgring")).log().all();
 	}
 }

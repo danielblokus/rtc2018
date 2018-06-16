@@ -17,7 +17,7 @@ public class RestAssuredExercises1Test {
 		
 		requestSpec = new RequestSpecBuilder().
 			setBaseUri("http://localhost").
-			setPort(9876).
+			setPort(8081).
 			setBasePath("/api/f1").
 			build();
 	}
@@ -35,7 +35,7 @@ public class RestAssuredExercises1Test {
 		when().
 			get("/2016/drivers.json").
 		then().
-				statusCode(400);
+				statusCode(200);
 	}
 	
 	/*******************************************************

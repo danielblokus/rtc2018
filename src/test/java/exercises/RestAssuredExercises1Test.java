@@ -1,6 +1,7 @@
 package exercises;
 
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -63,7 +64,8 @@ public class RestAssuredExercises1Test {
 		given().
 			spec(requestSpec).
 		when().
-		then();
+				get("/2016/drivers.json").
+		then().assertThat().contentType(ContentType.JSON);
 	}
 	
 	/***********************************************

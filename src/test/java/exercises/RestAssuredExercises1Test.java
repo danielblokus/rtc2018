@@ -6,7 +6,9 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static io.restassured.RestAssured.expect;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.not;
 
@@ -81,7 +83,8 @@ public class RestAssuredExercises1Test {
 		given().
 			spec(requestSpec).
 		when().
-		then();
+				get("/2014/1/circuits.json").
+		then().assertThat().body("MRData.CircuitTable.Circuits.circuitId", hasItem("albert_park")).log().all();
 	}
 	
 	/***********************************************

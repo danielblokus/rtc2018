@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.not;
 
-public class RestAssuredExercises1ApiTest extends BaseApiTest {
+public class RestAssuredExercises1Test extends BaseApiTest {
 
 	/*******************************************************
 	 * Send a GET request to /2016/drivers.json

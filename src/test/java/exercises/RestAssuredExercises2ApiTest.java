@@ -14,19 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 
 @RunWith(DataProviderRunner.class)
-public class RestAssuredExercises2Test {
-
-	private static RequestSpecification requestSpec;
-
-	@BeforeClass
-	public static void createRequestSpecification() {
-
-		requestSpec = new RequestSpecBuilder().
-			setBaseUri("http://localhost").
-			setPort(9876).
-			setBasePath("/api/f1").
-			build();
-	}
+public class RestAssuredExercises2ApiTest extends BaseApiTest {
 	
 	/*******************************************************
 	 * Create a DataProvider that specifies in which country

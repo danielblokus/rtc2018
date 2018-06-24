@@ -39,7 +39,7 @@ public class RestAssuredExercises2ApiTest extends BaseApiTest {
 	public void checkCountryForCircuit() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}
@@ -55,7 +55,7 @@ public class RestAssuredExercises2ApiTest extends BaseApiTest {
 	public void checkNumberOfPitstopsForMaxVerstappenIn2015() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}

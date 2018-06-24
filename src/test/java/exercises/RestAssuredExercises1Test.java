@@ -1,6 +1,7 @@
 package exercises;
 
-import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.LogDetail;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.BeforeClass;
@@ -36,6 +37,7 @@ public class RestAssuredExercises1Test {
 		when().
 			get("/2016/drivers.json").
 		then().
+
 			statusCode(200);
 	}
 	
@@ -103,7 +105,11 @@ public class RestAssuredExercises1Test {
 		given().
 			spec(requestSpec).
 		when().
-		then();
+				get("/2014/circuits.json").
+		then()
+                .assertThat()
+                .log().ifValidationFails()
+                .body("MRData.CircuitTable.Circuits.circuitId", hasItem("silverstone"));
 	}
 	
 	/***********************************************

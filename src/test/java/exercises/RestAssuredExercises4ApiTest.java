@@ -10,16 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class RestAssuredExercises4Test {
 
-	private static RequestSpecification requestSpec;
-
-	@BeforeClass
-	public static void createRequestSpecification() {
-
-		requestSpec = new RequestSpecBuilder().
-			setBaseUri("http://localhost").
-			setPort(9876).
-			build();
-	}
+public class RestAssuredExercises4ApiTest extends BaseApiTest {
 		
 	/*******************************************************
 	 * Get the list of speed records set by street legal cars

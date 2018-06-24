@@ -1,29 +1,12 @@
 package exercises;
 
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
-public class RestAssuredExercises3Test {
-
-	private static RequestSpecification requestSpec;
-
-	@BeforeClass
-	public static void createRequestSpecification() {
-
-		requestSpec = new RequestSpecBuilder().
-			setBaseUri("http://localhost").
-			setPort(9876).
-			setBasePath("/api/f1").
-			build();
-	}
+public class RestAssuredExercises3ApiTest extends BaseApiTest {
 		
 	/*******************************************************
 	 * Create a static ResponseSpecification that checks whether:

@@ -22,7 +22,7 @@ public class RestAssuredExercises1ApiTest extends BaseApiTest {
 	public void checkResponseCodeForCorrectRequest() {
 				
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 			get("/2016/drivers.json").
 		then().
@@ -39,7 +39,7 @@ public class RestAssuredExercises1ApiTest extends BaseApiTest {
 	public void checkResponseCodeForIncorrectRequest() {
 				
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 			get("/incorrect.json").
 		then().
@@ -55,7 +55,7 @@ public class RestAssuredExercises1ApiTest extends BaseApiTest {
 	public void checkResponseContentTypeJson() {
 				
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 			get("/2016/drivers.json").
 		then().
@@ -74,7 +74,7 @@ public class RestAssuredExercises1ApiTest extends BaseApiTest {
 	public void checkTheFirstRaceOf2014WasAtAlbertPark() {
 				
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 			get("/2014/1/circuits.json").
 		then().
@@ -92,7 +92,7 @@ public class RestAssuredExercises1ApiTest extends BaseApiTest {
 	public void checkThereWasARaceAtSilverstoneIn2014() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 				get("/2014/circuits.json").
 		then()
@@ -112,7 +112,7 @@ public class RestAssuredExercises1ApiTest extends BaseApiTest {
 	public void checkThereWasNoRaceAtNurburgringIn2014() {
 		
 		given().
-				spec(requestSpec).
+				spec(createRequestSpecification()).
 		when().
 			get("/2014/circuits.json").
 		then().

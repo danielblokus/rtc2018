@@ -23,7 +23,7 @@ public class RestAssuredExercises4ApiTest extends BaseApiTest {
 	public void checkThirdSpeedRecordWasSetIn1955() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}
@@ -39,7 +39,7 @@ public class RestAssuredExercises4ApiTest extends BaseApiTest {
 	public void checkFourthSpeedRecordWasSetbyAnAstonMartin() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}
@@ -55,7 +55,7 @@ public class RestAssuredExercises4ApiTest extends BaseApiTest {
 	public void checkThreeRecordsHaveBeenSetByCarsFromTheUK() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}
@@ -71,7 +71,7 @@ public class RestAssuredExercises4ApiTest extends BaseApiTest {
 	public void checkFourRecordsHaveBeenSetByCarsFromEitherItalyOrGermany() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}
@@ -87,7 +87,7 @@ public class RestAssuredExercises4ApiTest extends BaseApiTest {
 	public void checkTwoRecordsHaveBeenSetByCarsWhoseMakeEndOnBenz() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}

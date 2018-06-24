@@ -1,10 +1,6 @@
 package exercises;
 
-import io.restassured.filter.log.LogDetail;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;

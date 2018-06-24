@@ -11,19 +11,8 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.not;
 
-public class RestAssuredExercises1Test {
+public class RestAssuredExercises1ApiTest extends BaseApiTest {
 
-	private static RequestSpecification requestSpec;
-	
-	@BeforeClass
-	public static void createRequestSpecification() {
-		requestSpec = new RequestSpecBuilder().
-			setBaseUri("http://localhost").
-			setPort(9876).
-			setBasePath("/api/f1").
-			build();
-	}
-	
 	/*******************************************************
 	 * Send a GET request to /2016/drivers.json
 	 * and check that the response has HTTP status code 200

@@ -51,7 +51,7 @@ public class RestAssuredExercises3ApiTest extends BaseApiTest {
 	public void useResponseSpecification() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}
@@ -67,7 +67,7 @@ public class RestAssuredExercises3ApiTest extends BaseApiTest {
 	public void useExtractedDriverId() {
 		
 		given().
-			spec(requestSpec).
+			spec(createRequestSpecification()).
 		when().
 		then();
 	}

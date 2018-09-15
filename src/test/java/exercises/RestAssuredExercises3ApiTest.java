@@ -1,10 +1,17 @@
 package exercises;
 
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.apache.http.HttpStatus;
+import org.hamcrest.Matchers;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import utils.HttpStatusCodes;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class RestAssuredExercises3ApiTest extends BaseApiTest {
 		
@@ -20,8 +27,11 @@ public class RestAssuredExercises3ApiTest extends BaseApiTest {
 	
 	@BeforeClass
 	public static void createResponseSpecification() {
-		
-
+		responseSpec = new ResponseSpecBuilder()
+			.expectStatusCode(HttpStatusCodes.SUCCESS)
+			.expectContentType(ContentType.JSON)
+			.expectBody("MRData.CircuitTable.Circuits.circuitName[0]", equalTo("Albert Park Grand Prix Circuit"))
+			.build();
 	}
 	
 	/*******************************************************

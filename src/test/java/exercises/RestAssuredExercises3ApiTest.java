@@ -45,8 +45,13 @@ public class RestAssuredExercises3ApiTest extends BaseApiTest {
 	
 	@BeforeClass
 	public static void getNinthDriverId() {
-		
-
+		ninthDriverId =
+			given().
+				spec(createRequestSpecification()).
+			when().
+				get("/2016/drivers.json")
+			.then()
+				.extract().path("MRData.DriverTable.Drivers[8].driverId");
 	}
 	
 	/*******************************************************

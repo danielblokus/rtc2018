@@ -1,10 +1,8 @@
 package exercises;
 
-import dataentities.Car;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

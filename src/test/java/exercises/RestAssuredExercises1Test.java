@@ -22,7 +22,6 @@ public class RestAssuredExercises1Test extends BaseApiTest {
 		when().
 			get("/2016/drivers.json").
 		then().
-
 			statusCode(200);
 	}
 	

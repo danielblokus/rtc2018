@@ -9,7 +9,7 @@ class BaseApiTest {
     private static final int PORT = 9876;
     private static final String BASE_PATH = "/api/f1";
 
-    RequestSpecification createRequestSpecification() {
+    static RequestSpecification createRequestSpecification() {
         return new RequestSpecBuilder().
                 setBaseUri(HOST_URL).
                 setPort(PORT).
